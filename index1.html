@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>等保机器人</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+</head>
+<body>
+	<div class="main">
+		<div class="main_dbjqr">
+			<span>等保机器人</span>
+		</div>
+		<div class="orbit  main_jgxt">
+			<div class="planet">
+				<div class="ball">
+					<span class="titTxt">监管系统</span>
+					<span class="mark">监管部门</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit main_qbxt">
+			<div class="planet">
+				<div class="ball">
+					<span class="titTxt">情报机构</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit  main_zcjg">
+			<div class="planet first">
+				<div class="ball">
+					<span class="titTxt">二级自测</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+			<div class="planet second">
+				<div class="ball">
+					<span class="titTxt">三级自测</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit  main_bcdw">
+			<div class="planet first">
+				<div class="ball">
+					<span class="titTxt">永恒之蓝<br />测试盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet second">
+				<div class="ball">
+					<span class="titTxt">终端漏洞盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet third">
+				<div class="ball">
+					<span class="titTxt">信道漏 <br /> 洞盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet fourth">
+				<div class="ball">
+					<span class="titTxt">网络安全 <br/> 众测平台</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".ring3_ldhz span").hover(function() {
+			$(".ring3_ldhz p").text("被测单位扣动检测与威胁分析");
+		}, function() {
+			$(".ring3_ldhz p").text("被测单位");
+		});
+	});
+	$(document).ready(function() {
+		$(".ring3_cpxt span").hover(function() {
+			$(".ring3_cpxt p").text("测评机构测评在线作业和项目管理");
+		}, function() {
+			$(".ring3_cpxt p").text("测评机构");
+		});
+	});
+	$(document).ready(function() {
+		$(".ring3_jgxt span").hover(function() {
+			$(".ring3_jgxt p").text("监管单位了解总体安全态势和测评结果");
+		}, function() {
+			$(".ring3_jgxt p").text("监管单位");
+		});
+	});
+	$(document).ready(function() {
+		$(".ring3_qbxt span").hover(function() {
+			$(".ring3_qbxt p").text("测评机构汇聚客户资产和内外部安全服务数据，为客户提供威胁情报服务");
+		}, function() {
+			$(".ring3_qbxt p").text("测评机构");
+		});
+	});
+</script>
+</html>

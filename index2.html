@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>等保机器人</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index2.css"/>
+
+</head>
+<body>
+	<div class="main">
+		<div class="main_dbjqr">
+			<span>等保机器人</span>
+		</div>
+		<div class="orbit  main_jgxt">
+			<div class="planet">
+				<div class="ball">
+					<span class="titTxt">监管系统</span>
+					<span class="mark">监管部门</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit main_qbxt">
+			<div class="planet">
+				<div class="ball">
+					<span class="titTxt">情报机构</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit  main_zcjg">
+			<div class="planet first">
+				<div class="ball">
+					<span class="titTxt">二级自测</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+			<div class="planet second">
+				<div class="ball">
+					<span class="titTxt">三级自测</span>
+					<span class="mark">测评机构</span>
+				</div>
+			</div>
+		</div>
+		<div class="orbit  main_bcdw">
+			<div class="planet first">
+				<div class="ball">
+					<span class="titTxt">永恒之蓝<br />测试盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet second">
+				<div class="ball">
+					<span class="titTxt">终端漏洞盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet third">
+				<div class="ball">
+					<span class="titTxt">信道漏 <br /> 洞盒子</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+			<div class="planet fourth">
+				<div class="ball">
+					<span class="titTxt">网络安全 <br/> 众测平台</span>
+					<span class="mark">被测单位</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+        var PI = 2*Math.PI/360;
+
+        var jgxt = $(".main_jgxt .planet");
+        rotate(jgxt, 0, 10);
+
+        var qbxt = $(".main_qbxt .planet");
+        rotate(qbxt, 180, 20);
+
+        var erji = $(".main_zcjg .planet.first");
+        rotate(erji, 300, 25);
+        var sanji = $(".main_zcjg .planet.second");
+        rotate(sanji, 60, 25);
+
+        var yhzl = $(".main_bcdw .planet.first");
+        rotate(yhzl, 260, 30);
+        var zdld = $(".main_bcdw .planet.second");
+        rotate(zdld, 180, 30);
+        var xdld = $(".main_bcdw .planet.third");
+        rotate(xdld, 105, 30);
+        var wlaq = $(".main_bcdw .planet.fourth");
+        rotate(wlaq, 18, 30);
+
+		//ele:旋转对象，i：初始角度, speed:速度
+        function rotate(ele, i, speed){
+            setInterval(function() {
+                i+=0.5;
+                var originX = ele.parent().width()/2,
+                    originY = ele.parent().height()/2,
+                    left = 0,
+                    top = 0;
+                var jiaodu = i%360;
+                if((jiaodu>=0&&jiaodu<90)||(jiaodu<=360&&jiaodu>270)){
+                    left = originX+(originX*originY)/Math.sqrt(Math.pow(originY, 2)+Math.pow(originX, 2)*Math.pow(Math.tan(jiaodu*PI), 2));
+                    top = originY+(originX*originY*Math.tan(jiaodu*PI))/Math.sqrt(Math.pow(originY, 2)+Math.pow(originX, 2)*Math.pow(Math.tan(jiaodu*PI), 2));
+                }else if(jiaodu>90&&jiaodu<270){
+                    left = originX-(originX*originY)/Math.sqrt(Math.pow(originY, 2)+Math.pow(originX, 2)*Math.pow(Math.tan(jiaodu*PI), 2));
+                    top = originY-(originX*originY*Math.tan(jiaodu*PI))/Math.sqrt(Math.pow(originY, 2)+Math.pow(originX, 2)*Math.pow(Math.tan(jiaodu*PI), 2));
+                }else if(jiaodu==90){
+                    left = originX;
+                    top = originY + originY;
+                }else if(jiaodu==270){
+                    left = originX;
+                    top = originY - originY;
+                }
+                left -= ele.width()/2;
+                top -= ele.height()/2;
+                ele.css({left: left+'px', top: top+'px'});
+            }, speed);
+        }
+    });
+
+    $(".planet").click(function() {
+        alert($(this).find(".titTxt").text());
+    })
+
+</script>
+</html>

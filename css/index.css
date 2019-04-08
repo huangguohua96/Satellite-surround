@@ -1,0 +1,318 @@
+html,body{
+    height: 100%;
+    min-width: 1366px;
+    overflow: hidden;
+}
+body{width: 100%;height: 100%;background-image: url(../images/bg.png);background-repeat: no-repeat;background-size:cover;background-size:100%;background-position: left top;}
+.main{ 
+    position: relative;
+    width: 1366px;height: 100%;
+    color: #ffffff; font-family: MicrosoftYaHeiUI-Bold; 
+    /* background: url(../images/gd.png) center center no-repeat; */
+    /* background-size: 100% 100%; */
+    margin: 0 auto;
+    /* margin-top: 100px; */
+    perspective-origin: 50% 0;
+    -webkit-perspective-origin: 50% 0;
+    -ms-perspective-origin: 50% 0;
+    -moz-perspective-origin: 50% 0;
+    -o-perspective-origin: 50% 0;
+    transform-style: preserve-3d !important;
+    -webkit-transform-style: preserve-3d !important;
+    -ms-transform-style: preserve-3d !important;
+    -o-transform-style: preserve-3d !important;
+    -moz-transform-style: preserve-3d !important;
+}
+.main_dbjqr{position: absolute; 
+    top: 50%;left: 50%;
+    margin-left: -104.5px;margin-top: -104.5px;
+    text-align: center;
+    width: 209px;height: 209px;
+    line-height: 209px;
+    background: url(../images/zx.png) center center no-repeat;
+    background-size: cover;
+}
+
+.main_dbjqr span{font-family: SourceHanSansCN-Medium;font-size: 13px;font-weight: normal;font-stretch: normal;letter-spacing: 1px;color: #ffffff;}
+		
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transform-style: preserve-3d !important;
+    -ms-transform-style: preserve-3d !important;
+    animation: orbitrotate 10s linear 0s normal none infinite;
+}
+@keyframes orbitrotate{
+    0%{
+        transform: rotateX(73deg) rotateY(-15deg) rotateZ(0deg);
+        -webkit-transform: rotateX(73deg) rotateY(-15deg) rotateZ(0deg);
+        -ms-transform: rotateX(73deg) rotateY(-15deg) rotateZ(0deg);
+        -moz-transform: rotateX(73deg) rotateY(-15deg) rotateZ(0deg);
+        -o-transform: rotateX(73deg) rotateY(-15deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(73deg) rotateY(-15deg) rotateZ(-360deg);
+        -webkit-transform: rotateX(73deg) rotateY(-15deg) rotateZ(-360deg);
+        -ms-transform: rotateX(73deg) rotateY(-15deg) rotateZ(-360deg);
+        -moz-transform: rotateX(73deg) rotateY(-15deg) rotateZ(-360deg);
+        -o-transform: rotateX(73deg) rotateY(-15deg) rotateZ(-360deg);
+    }
+}
+.main .planet{
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+    transform-style: preserve-3d !important;
+    -ms-transform-style: preserve-3d !important;
+    -webkit-transform-style: preserve-3d !important;
+    -moz-transform-style: preserve-3d !important;
+    -o-transform-style: preserve-3d !important;
+    transform: rotateX(-90deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.main .planet .ball{ 
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    transform-origin: 50% 50% 0;
+    -ms-transform-origin: 50% 50% 0;
+    position: absolute;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: rotateX(0deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    animation: planetrotate 10s linear 0s normal none infinite;
+
+}
+@keyframes planetrotate{
+    0%{
+        transform: rotateX(0deg) rotateY(0deg);
+        -webkit-transform: rotateX(0deg) rotateY(0deg);
+        -ms-transform: rotateX(0deg) rotateY(0deg);
+        -moz-transform: rotateX(0deg) rotateY(0deg);
+        -o-transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(0deg) rotateY(-360deg);
+        -webkit-transform: rotateX(0deg) rotateY(-360deg);
+        -ms-transform: rotateX(0deg) rotateY(-360deg);
+        -moz-transform: rotateX(0deg) rotateY(-360deg);
+        -o-transform: rotateX(0deg) rotateY(-360deg);
+    }
+}
+.main .planet .ball span.mark{
+    position: absolute; 
+    left: 100%;
+    top: -12px;
+    width: 64px;
+    height: 21px;
+    line-height: 21px;
+    color: #00e6fb;
+    border: solid 1px #00e6fb;
+}
+.main .planet .ball span.mark:before{
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    height:5px;
+    width: 10px;
+    content: "";
+    border-left: solid 1px #00e6fb;
+    border-top: solid 1px #00e6fb;
+}
+.main .planet .ball span.mark:after{
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    height:5px;
+    width: 10px;
+    content: "";
+    border-right: solid 1px #00e6fb;
+    border-bottom: solid 1px #00e6fb;
+}
+/* 监管系统 */
+.main_jgxt{
+    z-index: 10;
+    width: 600px;
+    height: 600px;
+    margin-top: -300px;
+    margin-left: -300px;
+    animation-duration: 9s;
+}
+.main_jgxt .planet{
+    position: absolute;
+    left: 55px;
+    top: 45px;
+    height:76px;
+    width: 72px;
+}
+.main_jgxt .planet .ball{
+    background: url(../images/jgxt.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 9s;
+}
+.main_jgxt .planet span.titTxt{
+    line-height: 76px;
+    font-size: 12px; 
+}
+
+/* 情报系统 */
+.main_qbxt{
+    z-index: 11;
+    width: 800px;
+    height: 800px;
+    margin-top: -400px;
+    margin-left: -400px;
+    animation-duration: 12s;
+}
+.main_qbxt .planet{
+    position: absolute;
+    left: -35px;
+    top: 350px;
+    height:74px;
+    width: 70px;
+}
+.main_qbxt .planet .ball{
+    background: url(../images/qbxt.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 12s;
+}
+.main_qbxt .planet span.titTxt{
+    line-height: 74px;
+    font-size: 12px; 
+}
+
+/* 自测机构 */
+.main_zcjg{
+    z-index: 12;
+    width: 1000px;
+    height: 1000px;
+    margin-top: -500px;
+    margin-left: -500px;
+    animation-duration: 18s;
+}
+.main_zcjg .planet.first{
+    position: absolute;
+    left: -35px;
+    top: 500px;
+    height:108px;
+    width: 102px;
+}
+.main_zcjg .planet.second{
+    position: absolute;
+    left: 950px;
+    top: 350px;
+    height:76px;
+    width: 72px;
+}
+.main_zcjg .planet.first .ball{
+    background: url(../images/2j.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 18s;
+}
+.main_zcjg .planet.second .ball{
+    background: url(../images/3j.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 18s;
+}
+.main_zcjg .planet.first span.titTxt{
+    line-height: 108px;
+    font-size: 12px; 
+}
+.main_zcjg .planet.second span.titTxt{
+    line-height: 76px;
+    font-size: 12px; 
+}
+
+/* 被测机构 */
+.main_bcdw{
+    z-index: 13;
+    width: 1200px;
+    height: 1200px;
+    margin-top: -600px;
+    margin-left: -600px;
+    animation-duration: 22s;
+}
+.main_bcdw .planet.first{
+    position: absolute;
+    left: 1000px;
+    top: 958px;
+    height:101px;
+    width: 96px;
+}
+.main_bcdw .planet.first .ball{
+    background: url(../images/yhzl.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 22s;
+}
+.main_bcdw .planet.first span.titTxt{
+    display: inline-block;
+    margin-top: 34px;
+    line-height: 1.5em;
+    font-size: 12px; 
+}
+
+
+.main_bcdw .planet.second{
+    position: absolute;
+    left: 108px;
+    top: 950px;
+    height:120px;
+    width: 114px;
+}
+.main_bcdw .planet.second .ball{
+    background: url(../images/zdld.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 22s;
+}
+.main_bcdw .planet.second span.titTxt{
+    line-height: 120px;
+    font-size: 12px; 
+}
+
+.main_bcdw .planet.third{
+    position: absolute;
+    left: 28px;
+    top: 300px;
+    height:76px;
+    width: 72px;
+}
+.main_bcdw .planet.third .ball{
+    background: url(../images/3j.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 22s;
+}
+.main_bcdw .planet.third span.titTxt{
+    display: inline-block;
+    margin-top: 20px;
+    line-height: 1.5em;
+    font-size: 12px; 
+}
+
+
+.main_bcdw .planet.fourth{
+    position: absolute;
+    left: 1100px;
+    top: 300px;
+    height:101px;
+    width: 96px;
+}
+.main_bcdw .planet.fourth .ball{
+    background: url(../images/yhzl.png) center center no-repeat;
+    text-align: center;
+    animation-duration: 22s;
+}
+.main_bcdw .planet.fourth span.titTxt{
+    display: inline-block;
+    margin-top: 34px;
+    line-height: 1.5em;
+    font-size: 12px; 
+}
+
